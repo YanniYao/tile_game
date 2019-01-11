@@ -463,17 +463,15 @@ class FormCreate(QWidget):
 
 
     def suck(self):
-        if (self.hold == False) and (self.floorstatus[self.robotx][self.roboty] == 2):
+        if (self.floorstatus[self.robotx][self.roboty] == 2):
             print("im a tile")
             self.floorstatus[self.robotx][self.roboty] = 0
-            self.hold = True
             self.inittilenumber -= 1
 
     def release(self):
         if (self.floorstatus[self.robotx][self.roboty] == 1):
             print("im a hole")
             self.floorstatus[self.robotx][self.roboty] = 0
-            self.hold = False
             self.initholenumber -= 1
 
 if __name__ == "__main__":
